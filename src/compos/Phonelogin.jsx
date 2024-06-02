@@ -4,8 +4,6 @@ import Auth from '../appwrite/Auth'
 import { useDispatch, useSelector } from 'react-redux'
 import { setphoneid, storelogin } from '../store/Storeslice'
 
-
-
 const Phonelogin = () => {
     const [number, setnumber] = useState("")
     const [erro, seterro] = useState("")
