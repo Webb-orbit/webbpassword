@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+
+.no-scolls{
+    overflow: hidden;
+  }
+  .scolls{
+    overflow: scroll;
+}
+
+html::-webkit-scrollbar{
+    width: 0.3rem;
+    background-color: black;
+}
+html::-webkit-scrollbar-thumb{
+  background-color: rgb(109, 236, 255);
+}
+.symbols-defult{
+  cursor: pointer;
+  user-select: none;
+    font-size: 0.9rem;
+}
+
+.blur-background {
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the color and opacity as needed */
+  }
+
+  pre{
+    white-space: pre-wrap;
+  }
+  
+  .poppins-regular {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+  }
+
+
+  
+  
+  body{
+    background-color: rgb(5, 5, 5);
+    color: whitesmoke;
+  }
+
+  .webviewer{
+    height: 100vh;
+}
+
+.editor::-webkit-scrollbar{
+  width: 0.2rem;
+}
+.editor::-webkit-scrollbar-track{
+  background-color: transparent;
+}
+.editor::-webkit-scrollbar-thumb{
+  background-color: rgb(178, 178, 178);
+  cursor: pointer;
+}
+
+.no-scrollbar::-webkit-scrollbar{
+    display: none;
+    width: 0;
+}
+
+
+
+
+@keyframes pulse {
+  50% {
+      opacity: 0.5;
+  }
+}
+.animate-pulse1s {
+  animation: pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+.animate-pulse2s {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+

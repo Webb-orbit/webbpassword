@@ -1,0 +1,41 @@
+*{
+    appearance: none;   
+}
+h1{
+    font-size: 40px;
+}
+h2{
+    font-size: 30px;
+}
+h3{
+    font-size: 20px;
+}
+
+ul li{
+    list-style-type:circle;
+    margin-left: 2rem;
+}
+
+ol li{
+    margin-left: 2rem;
+    list-style-type: upper-roman;
+}
+
+blockquote{
+    padding-left: 1rem;
+    margin-left: 1rem;
+    border-left: 4px solid white;
+}
+
+pre{
+    margin:0.5rem  auto;
+    width: 90%;
+    color:white;
+    padding: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.477);
+    font-size: 0.8rem;
+}
+
+code{
+    display: block;
+}
