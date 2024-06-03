@@ -10,7 +10,6 @@ const Boxcompo = ({mass ,child, visiblety, setvisiblety }) => {
                         <span onClick={()=>setvisiblety(false)} className="material-symbols-outlined">close</span>
                     </button>
                 </div>
-
                 {child}
             </div>
         </div>
