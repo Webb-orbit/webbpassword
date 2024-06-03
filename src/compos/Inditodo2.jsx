@@ -138,6 +138,9 @@ const Inditodo2 = () => {
 
     useEffect(() => {
         fetchtodo()
+        if (navigator.vibrate) {
+            navigator.vibrate([200, 100, 200,100, 200]);
+        }
     }, [slug])
 
     useEffect(() => {
