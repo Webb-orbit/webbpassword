@@ -9,7 +9,6 @@ import Noty from "./compos/Noty"
 import { SpeedInsights } from "@vercel/speed-insights/react"
 import Screenloader from "./compos/Screenloader";
 
-
 function App() {
   let disp = useDispatch()
   const [loding, setloding] = useState(true)
