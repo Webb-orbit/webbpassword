@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import Dataserv from '../appwrite/Data'
-import Loading from './Loading'
 import { useDispatch} from 'react-redux'
 import { changeshare, showtost } from '../store/Storeslice'
 import { usecretecode } from '../hooks/usedecode'
@@ -25,7 +24,7 @@ const Inditodo2 = () => {
     const [userids, setuserids] = useState("")
     const [uploading, setuploading] = useState(false)
 
-
+ 
     const fetchtodo = async () => {
         try {
             const useris = await Auth.getcurrentacc()
@@ -139,7 +138,7 @@ const Inditodo2 = () => {
     useEffect(() => {
         fetchtodo()
         if (navigator.vibrate) {
-            navigator.vibrate([200, 100, 200,100, 200]);
+            navigator.vibrate([200, 100]);
         }
     }, [slug])
 

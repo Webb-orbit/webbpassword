@@ -27,6 +27,7 @@ import Profshares from './compos/Profshares.jsx'
 import Profabout from './compos/Profabout.jsx'
 import Varifyemail from './compos/Varifyemail.jsx'
 import Failcompo from './compos/Failcompo.jsx'
+import Newinditodo from './compos/indetocopo/Newinditodo.jsx'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -40,6 +41,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Route  path='/:userid/todo/:slug' element={<Authlayout authencation={true} child={<Inditodopage/>}/>}>
         <Route index path='/:userid/todo/:slug' element={<Inditodo2/>}/>
       </Route>
+        <Route index path='/newtodo' element={<Newinditodo/>}/>
 
       <Route path='/account' element={<Authlayout authencation={true} child={<Profilepage/>}/>} >
         <Route path='/account' index element={<Authlayout authencation={true} child={<Profile/>}/>}/>

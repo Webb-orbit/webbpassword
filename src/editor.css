@@ -10,6 +10,9 @@ h2{
 h3{
     font-size: 20px;
 }
+a{
+    color: lightblue;
+}
 
 ul li{
     list-style-type:circle;
@@ -25,11 +28,12 @@ blockquote{
     padding-left: 1rem;
     margin-left: 1rem;
     border-left: 4px solid white;
+    height:fit-content;
 }
 
 pre{
     margin:0.5rem  auto;
-    width: 90%;
+    width: 95%;
     color:white;
     padding: 0.5rem;
     background-color: rgba(0, 0, 0, 0.477);
