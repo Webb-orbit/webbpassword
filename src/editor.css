@@ -2,16 +2,15 @@
     appearance: none;   
 }
 h1{
-    font-size: 40px;
+    font-size: 35px;
+    font-weight: 600;
+    letter-spacing: 2px;
 }
 h2{
     font-size: 30px;
 }
 h3{
     font-size: 20px;
-}
-a{
-    color: lightblue;
 }
 
 ul li{
@@ -22,6 +21,12 @@ ul li{
 ol li{
     margin-left: 2rem;
     list-style-type: upper-roman;
+}
+
+hr{
+    margin: 1rem 0;
+     border-top-width: 3px;
+     border-top-color: rgb(230, 254, 255);
 }
 
 blockquote{
