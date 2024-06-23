@@ -19,6 +19,7 @@ function App() {
     Auth.getcurrentacc().then((e)=>{
       if (e) {
         disp(storelogin(e.$id))
+        console.log(e);
       } else {
         disp(storelogout())
       }

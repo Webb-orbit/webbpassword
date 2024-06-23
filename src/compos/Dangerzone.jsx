@@ -31,6 +31,7 @@ const Dangerzone = () => {
     }
     
     async function deleteShares(sharesdoc) {
+      
       await Promise.all(sharesdoc.map(async (e) => {
         await Dataserv.deleteshare(e.$id);
       }));

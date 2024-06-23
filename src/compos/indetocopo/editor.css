@@ -13,6 +13,10 @@ h3{
     font-size: 20px;
 }
 
+.a{
+color: aquamarine;
+}
+
 ul li{
     list-style-type:circle;
     margin-left: 2rem;

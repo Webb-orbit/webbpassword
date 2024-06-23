@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react"
+import { useMemo, useRef, useState } from "react"
 import Dataserv from "../appwrite/Data"
 import { useDispatch, useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
@@ -73,7 +73,7 @@ const Todos = () => {
     
   }
 
-  useEffect(() => {
+  useMemo(() => {
     if (selet.status) gettodos()
     listmasfun()
   }, [updater])
