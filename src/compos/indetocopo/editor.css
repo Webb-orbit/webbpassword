@@ -14,11 +14,11 @@ h3{
 }
 
 .a{
-color: aquamarine;
+color: rgb(204, 255, 238);
 }
 
 ul li{
-    list-style-type:circle;
+    list-style-type:disc;
     margin-left: 2rem;
 }
 
@@ -29,7 +29,7 @@ ol li{
 
 hr{
     margin: 1rem 0;
-     border-top-width: 3px;
+     border-top-width: 1px;
      border-top-color: rgb(230, 254, 255);
 }
 

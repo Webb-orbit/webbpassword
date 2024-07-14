@@ -7,6 +7,8 @@ import { useDispatch } from 'react-redux'
 import { showtost } from '../store/Storeslice'
 import Noty from './Noty'
 import logo from "../assets/logo.jpeg"
+import parse from "html-react-parser"
+import { usesimtohrml } from '../hooks/usesimtohrml'
 
 const Allshare = () => {
   const { shareid } = useParams()
@@ -21,16 +23,17 @@ const Allshare = () => {
     const get = await Dataserv.getshare(shareid)
     const datais = await get
     let setup = JSON.parse(datais.sharedtodo)
-    const decodecon = await decodetoplain(setup.content, setup.code)
+    const decodecon = decodetoplain(setup.content, setup.code)
+    const hemlis = usesimtohrml(decodecon)
     const createtime = datais.$createdAt.substring(0,10)
        
     if (datais.privated && datais.creatorinfo) {
       let auther = JSON.parse(datais.creatorinfo)
-      setdecoed({decontent:decodecon, createdAt: createtime, isauther:{authername:auther.creatorname, uservari: auther.varyfit}})
+      setdecoed({decontent:hemlis, createdAt: createtime, isauther:{authername:auther.creatorname, uservari: auther.varyfit}})
       settododata(setup)
       setdata(datais)
     }else{
-      setdecoed({decontent:decodecon, createdAt: createtime, isauther:{authername:"ghost", uservari: false}})
+      setdecoed({decontent:hemlis, createdAt: createtime, isauther:{authername:"ghost", uservari: false}})
       settododata(setup)
       setdata(datais)
     }
@@ -103,7 +106,7 @@ const Allshare = () => {
                   </div>
 
 
-    <div className=' bg-[#202020] w-full min-h-screen max-h-full max-sm:mt-10'>
+    <div className=' bg-[#101010] w-full min-h-screen max-h-full max-sm:mt-10'>
 
       <div className=' min-h-[15rem]  flex justify-center items-center w-full max-sm:min-h-[10rem] '>
         
@@ -118,8 +121,8 @@ const Allshare = () => {
 
       </div>
 
-      <pre className=' pt-5 pb-20 w-[55%] text-[1rem] leading-[1.8rem] poppins-regular text-neutral-300 mx-auto break-words max-sm:text-[4vw]  max-sm:w-[95%]'>
-        {decoed.decontent}
+      <pre className=' bg-[#101010] pt-5 pb-20 w-[55%] text-[1rem] leading-[1.8rem] poppins-regular text-neutral-300 mx-auto break-words max-sm:text-[4vw]  max-sm:w-[95%]'>
+        {parse(decoed.decontent)}
       </pre>
 
     </div>

@@ -39,9 +39,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Route path='/pdf/:pdfid' element={<Authlayout authencation={true} child={<Pdfpriview/>}/>}/>
 
       <Route  path='/:userid/todo/:slug' element={<Authlayout authencation={true} child={<Inditodopage/>}/>}>
-        <Route index path='/:userid/todo/:slug' element={<Inditodo2/>}/>
+        <Route  path='/:userid/todo/:slug' element={<Inditodo2/>}/>
       </Route>
-        <Route index path='/newtodo' element={<Newinditodo/>}/>
+        <Route path='/workspace/:userid/:slug' element={<Newinditodo/>} />
+        <Route  path='/newtodo' element={<Newinditodo/>}/>
 
       <Route path='/account' element={<Authlayout authencation={true} child={<Profilepage/>}/>} >
         <Route path='/account' index element={<Authlayout authencation={true} child={<Profile/>}/>}/>

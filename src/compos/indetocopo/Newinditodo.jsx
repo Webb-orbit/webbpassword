@@ -1,26 +1,21 @@
-import {useEffect, useRef, useState } from "react"
+import Sharepage from "../Sharepage"
 import "./editor.css"
-import { usesimtohrml } from "../../hooks/usesimtohrml"
+import Indisidebar from "./Indisidebar"
+import Maintodo from "./Maintodo"
 
 const Newinditodo = () => {
-  const [plain, setplain] = useState("")
-  const textref = useRef(null)
 
 
-  const texttomd = ()=>{
-   let htm = usesimtohrml(plain)
-    textref.current.innerHTML = htm
-  }
-
-  useEffect(()=>{
-    texttomd()
-  },[plain])
-    
   return (
-    <div className="flex min-h-[10rem] h-full justify-around  items-stretch">
-      <textarea spellCheck="false" onChange={(e)=>setplain(e.target.value)} className=" resize-none p-5 w-[45%] bg-black  "></textarea>
-      <div ref={textref} className=" whitespace-pre-wrap break-words p-5 w-[45%] bg-[#242424]"></div>
+    <>
+    <Sharepage/>
+    <div className=" flex p-2 gap-10">
+      <div className="sticky top-0">
+      <Indisidebar/>
+      </div>
+      <Maintodo/>
     </div>
+    </>
   )
 }
 
