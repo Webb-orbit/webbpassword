@@ -22,7 +22,7 @@ export const usesimtohrml = (markdown) => {
         .replace(/^### (.*$)/gim, "<h3>$1</h3>")
         .replace(/^\*\*(.*$)/gim, "<ul><li>$1</li></ul>")
         .replace(/<\/ul>\s*<ul>/gim, "")
-        .replace(/^\d\.(.*$)/gim, "<ol><li>$1</li></ol>")
+        .replace(/^\^(.*$)/gim, "<ol><li>$1</li></ol>")
         .replace(/<\/ol>\s*<ol>/gim, "")
         .replace(/\*(.*)\*/gim, "<b>$1</b>")
         .replace(/^>(.*$)/gim, '<blockquote>$1</blockquote>')

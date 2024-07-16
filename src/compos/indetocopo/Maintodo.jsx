@@ -30,7 +30,7 @@ const Maintodo = () => {
       settododata(todo)
       setmdtext(decoded)
     } catch (error) {
-      Navigate("/")
+      // Navigate("/")
       console.log(error);
       disp(showtost({ "display": true, "mass": "invalid argument", icon: 'sports_volleyball', bg: "bg-red-500", time: '2000' }))
     }
@@ -85,7 +85,7 @@ const Maintodo = () => {
 
   return (
     <>
-    <div className="p-2 w-[90%]" >
+    <div className="p-2 w-[90%] max-sm:w-[100%]" >
       <div>
         <div className='flex justify-between py-10'>
           <h2 className=' capitalize font-semibold text-neutral-400 text-[2rem]' >{tododata.title}</h2>
@@ -100,18 +100,18 @@ const Maintodo = () => {
               {!splited && <button onClick={() => seteditorpreview(false)} className={`h-full px-4   capitalize font-medium ${!editorpreview ? "bg-black" : "bg-neutral-700/70"}`}>preview</button>}
             </div>
             <div className='flex gap-2'>
-              <button onClick={() => setsplited(pre => !pre)} className="material-symbols-outlined">{splited ? "splitscreen_left" : "fullscreen_portrait"}</button>
+              <button onClick={() => setsplited(pre => !pre)} className=" material-symbols-outlined">{splited ? "splitscreen_left" : "fullscreen_portrait"}</button>
               <button onClick={savetodo} className="material-symbols-outlined" >save</button>
               <button onClick={cancleedit} className="material-symbols-outlined" >do_not_disturb_on</button>
             </div>
           </div>
-          <div className=" flex w-full">
+          <div className=" flex w-full max-sm:flex-col">
 
-            {edited && <div className={`${splited ? "w-1/2" : editorpreview ? "w-full" : "hidden"}`}>
+            {edited && <div className={`${splited ? "w-1/2 max-sm:w-[100%]" : editorpreview ? "w-full" : "hidden"}`}>
               <textarea onChange={(e) => setmdtext(e.target.value)} value={mdtext} spellCheck="false" maxLength={50000} className=' w-full resize-none bg-neutral-900 whitespace-break-spaces p-2 h-[90vh] overflow-y-scroll editor outline-none'></textarea>
             </div>}
 
-            <div className={`${edited ? splited ? "w-1/2" : editorpreview ? "hidden" : "w-full" : "w-[85%]"}`}>
+            <div className={`${edited ? splited ? "w-1/2 max-sm:w-[100%]" : editorpreview ? "hidden" : "w-full" : "w-[85%] max-sm:w-[100%]"}`}>
               <div ref={textref} className={` text-[1.1rem]  whitespace-break-spaces ${edited && "w-[100%] h-[90vh] overflow-y-scroll editor p-2"}`}></div>
             </div>
 

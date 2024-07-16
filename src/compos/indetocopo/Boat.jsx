@@ -70,13 +70,13 @@ const Boat = ({ tododata }) => {
             <div className='fixed bottom-5 right-10 w-fit h-fit rounded-md'>
                 <button onClick={() => setmenubar(pre => !pre)} className=" text-[1.6rem] text-neutral-100 material-symbols-outlined bg-neutral-800 p-2 rounded-full">more_horiz</button>
 
-                <div className={` fixed bottom-16 w-[18%] outline select-none outline-1 outline-neutral-500 bg-neutral-900 px-2 py-4 rounded-md  flex-col gap-2 right-10 ${menubar ? "flex" : "hidden"}`}>
+                <div className={` fixed bottom-16 w-[18%] outline select-none outline-1 outline-neutral-500 bg-neutral-900 px-2 py-4 rounded-md  flex-col gap-2 right-10 ${menubar ? "flex" : "hidden"} max-sm:w-[65%]`}>
+                    <button onClick={() => setalopener(pre => !pre)} className=' hover:bg-neutral-800 rounded-md px-2 py-1 flex items-center gap-5'><span className='text-[1.2rem] material-symbols-outlined text-neutral-300'>format_overline</span>
+                        <span className=' capitalize font-semibold'>Ask AI</span></button>
 
                     <button onClick={() => setmarkopener(pre => !pre)} className=' hover:bg-neutral-800 rounded-md px-2 py-1 flex items-center gap-5'><span className='text-[1.2rem] material-symbols-outlined text-neutral-300'>category_search</span>
                         <span className=' capitalize font-semibold'>markdown syntex</span></button>
 
-                    <button onClick={() => setalopener(pre => !pre)} className=' hover:bg-neutral-800 rounded-md px-2 py-1 flex items-center gap-5'><span className='text-[1.2rem] material-symbols-outlined text-neutral-300'>format_overline</span>
-                        <span className=' capitalize font-semibold'>Ask AI</span></button>
 
                     <button onClick={goshare} className=' hover:bg-neutral-800 rounded-md px-2 py-1 flex items-center gap-5'><span className='text-[1.2rem] material-symbols-outlined text-neutral-300'>share</span>
                         <span className=' capitalize font-semibold'>share</span></button>
@@ -92,7 +92,7 @@ const Boat = ({ tododata }) => {
 
              <Aicontent opener={alopener} setopener={setalopener} />
 
-            <div className={` bottom-16 p-3 bg-neutral-950 outline outline-1 outline-neutral-400 right-10 w-[40%] h-[50vh] rounded-md overflow-y-scroll editor ${markopener ? "fixed" : "hidden"}`}>
+            <div className={` bottom-16 p-3 bg-neutral-950 outline outline-1 outline-neutral-400 right-10 w-[40%] h-[50vh] rounded-md overflow-y-scroll editor ${markopener ? "fixed" : "hidden"} max-sm:right-2 max-sm:w-[90%]`}>
                     <div className='flex justify-between items-start p-2'>
                         <p className=' w-[90%] font-medium capitalize poppins'>markdown syntex</p>
                         <button onClick={closemark} className="material-symbols-outlined">close</button>
@@ -102,13 +102,12 @@ const Boat = ({ tododata }) => {
                         <p>H2 heading == ## text</p>
                         <p>H3 heading == ### text</p>
                         <p>Bulleted list == ** text</p>
-                        <p>Numbered list == **</p>
+                        <p>Numbered list == ^ text</p>
                         <p>Bold == *text*</p>
                         <p>Code block == ``` code ```</p>
                         <p>Blockquote == &gt; text</p>
-                        <p>link == &gt; [URL](NAME)</p>
+                        <p>link == [URL](NAME)</p>
                         <p>Text divider == ---</p>
-                        <p>api key == AIzaSyD8nmI-MNBJg0ptoBXaWAflu5-6KAsMheU </p>
                     </pre>
                 </div>
         </>

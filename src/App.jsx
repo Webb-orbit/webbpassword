@@ -8,23 +8,40 @@ import Navbar from "./compos/Navbar"
 import Noty from "./compos/Noty"
 import { SpeedInsights } from "@vercel/speed-insights/react"
 import Screenloader from "./compos/Screenloader";
+import Dataserv from "./appwrite/Data";
+import Clientbase from "./appwrite/client";
 
 function App() {
   let disp = useDispatch()
   const [loding, setloding] = useState(true)
 
-
+const init = async()=>{
+  try {
+    let current = await Auth.getcurrentacc()
+    if (current) {
+      let user = (await Clientbase.getclientbyuserid(current.$id)).documents
+      if (user.length > 0) {
+        console.log("have", user);
+        disp(storelogin(current.$id))
+      }else{
+        const newuser = await Clientbase.createclient(current.$id)
+        if (newuser) {
+          console.log("newmade", newuser);
+          disp(storelogin(current.$id))
+        }
+      }
+    }else{
+      disp(storelogout())
+    }
+  } catch (error) {
+    console.log(error);
+  } finally{
+    setloding(false)
+  }
+}
 
   useEffect(()=>{
-    Auth.getcurrentacc().then((e)=>{
-      if (e) {
-        disp(storelogin(e.$id))
-        console.log(e);
-      } else {
-        disp(storelogout())
-      }
-    })
-    .finally(()=> setloding(false))
+init()
   },[])
 
 

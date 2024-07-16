@@ -3,7 +3,7 @@ import Dataserv from '../../appwrite/Data'
 import { useSelector } from 'react-redux'
 import { Link, useParams } from 'react-router-dom'
 
-const Indisidebar = () => {
+const Indisidebar = ({toggle, settoggle}) => {
     const [todos, settodos] = useState([])
     const {userdata} = useSelector(state=> state.track)
     const {slug} = useParams()
@@ -19,11 +19,15 @@ const Indisidebar = () => {
     }
 
     useEffect(()=>{
+        settoggle(false)
+    },[slug])
+
+    useEffect(()=>{
         fetchtodos()
     },[])
 
   return (
-    <div className='w-[15rem] p-2 sticky top-0 bg-black'>
+    <div className={`w-[15rem] p-2 sticky top-0 bg-black h-screen max-sm:${toggle?"block":"hidden"}`}>
         <p className='text-[0.8rem] text-center font-medium uppercase'>your workspaces</p>
         <div className='flex flex-col gap-3'>
         {todos.map((e)=>(

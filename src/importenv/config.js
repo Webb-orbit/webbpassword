@@ -5,7 +5,8 @@ const config = {
     collectionid: String(import.meta.env.VITE_COLLECTION_ID),
     bucketid: String(import.meta.env.VITE_BUCKET_ID),
     ultracollid: String(import.meta.env.VITE_ULTRACOLL_ID),
-    sharedid: String(import.meta.env.VITE_SHAREED_ID)
+    sharedid: String(import.meta.env.VITE_SHAREED_ID),
+    clientid: String(import.meta.env.VITE_CLIENT_ID),
 }
 
 export default config

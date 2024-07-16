@@ -6,6 +6,7 @@ import { showtost, storelogout } from '../store/Storeslice'
 import { useNavigate } from 'react-router-dom'
 import Dataserv from '../appwrite/Data'
 import Bucket from '../appwrite/Storage'
+import Clientbase from '../appwrite/client'
 
 const Dangerzone = () => {
     const [emailphone, setemailphone] = useState()
@@ -16,9 +17,7 @@ const Dangerzone = () => {
 
     const userdata = async()=>{
         let userd = await Auth.getcurrentacc()
-        let daats = await userd
-        console.table(daats)
-        setemailphone(daats)
+        setemailphone(userd)
         setbtnname("delete account")
     }
 
@@ -67,18 +66,17 @@ const Dangerzone = () => {
           try {
             setbtnname("deleting...")
             setload(true)
-            let todos = await Dataserv.alltodos(emailphone.$id)
-            let shares = await Dataserv.sharesbyid(emailphone.$id)
-            let ultras = await Dataserv.allultratags(emailphone.$id)
-            let todosdoc = todos.documents
-            let sharesdoc = shares.documents
-            let ultrasdoc = ultras.documents
+            let todos = (await Dataserv.alltodos(emailphone.$id)).documents
+            let shares = (await Dataserv.sharesbyid(emailphone.$id)).documents
+            let ultras = (await Dataserv.allultratags(emailphone.$id)).documents
+            let users = (await Clientbase.getclientbyuserid(emailphone.$id)).documents
 
-            let aa = await deleteTodos(todosdoc);
-            let bb = await deleteShares(sharesdoc);
-            let cc = await deleteUltras(ultrasdoc);
+            let aa = await deleteTodos(todos);
+            let bb = await deleteShares(shares);
+            let cc = await deleteUltras(ultras);
+            let dd = await Clientbase.deleteuser(users);
 
-            if (aa && bb && cc) {
+            if (aa && bb && cc && dd) {
               console.log("done");
               logouts()
             }

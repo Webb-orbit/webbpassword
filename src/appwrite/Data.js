@@ -27,8 +27,8 @@ async deletetodo(docid){
  }
 }
 
-async updatetodo(docid, {content,code,shared}){
-    return await this.database.updateDocument(config.databaseid, config.collectionid, docid,  {content, code, shared})
+async updatetodo(docid, {content,code,shared,geminiapi}){
+    return await this.database.updateDocument(config.databaseid, config.collectionid, docid,  {content, code, shared,geminiapi})
 }
 
 async alltodos(quries){

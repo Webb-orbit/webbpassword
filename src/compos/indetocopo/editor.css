@@ -18,13 +18,13 @@ color: rgb(204, 255, 238);
 }
 
 ul li{
-    list-style-type:disc;
+    list-style-type:square;
     margin-left: 2rem;
 }
 
 ol li{
     margin-left: 2rem;
-    list-style-type: upper-roman;
+    list-style-type:decimal;
 }
 
 hr{
