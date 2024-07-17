@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux'
 import { showtost, updatelistto } from '../../../store/Storeslice'
 import { usecriptapi } from '../../../hooks/useapitocode'
 import { decodetoplain } from '../../../hooks/usecodetoplain'
+import { Link } from 'react-router-dom'
 
 
 const Aiaettings = ({setopen, data }) => {
@@ -39,7 +40,7 @@ const Aiaettings = ({setopen, data }) => {
             <div className='p-2 flex flex-col gap-6'>
                 <div>
                     <h2 className=' capitalize'>add gemini api key</h2>
-                    <p>Don't have gemini api key? get gemini api guid</p>
+                    <p>Don't have gemini api key? <Link to={"https://aistudio.google.com/app"} target='_blank' className=' text-blue-400'>get key</Link></p>
                 </div>
                 <div className=' flex items-center gap-2 justify-center outline outline-1 outline-neutral-400 w-[55%] self-center rounded-md'>
                     <input maxLength={150} placeholder='add or update keys'  value={apikey} onChange={(e)=> setapikey(e.target.value)} className=' w-full placeholder:capitalize p-2 bg-transparent outline-none rounded-md text-[0.9rem]  h-full border-none' type="text" />

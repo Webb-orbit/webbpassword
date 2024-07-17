@@ -15,17 +15,12 @@ const Logincompo = () => {
     e.preventDefault()
     seterro("")
     try {
-      console.log("log");
       let log = await Auth.login(email,password)
       console.log(log);
-      console.log("done101");
       if (log) {
-        console.log("done10");
         let data = await Auth.getcurrentacc()
-        console.log("done0");
         if (data) {
           console.log(data)
-          console.log("done1");
           disp(storelogin(data.$id))
           navia("/")
         }
