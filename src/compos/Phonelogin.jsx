@@ -22,6 +22,7 @@ const Phonelogin = () => {
                 setotpstart(true)
             }
         } catch (error) {
+            console.log(error);
             seterro(error)
         }
     }
@@ -54,7 +55,7 @@ const Phonelogin = () => {
     <div className=' bg-black text-white w-full h-screen flex flex-col items-center justify-center '>
     <h1 className='text-[1.5rem] uppercase font-[600] font-mono tracking-[6px] select-none'>{otpstart?"varify OTP":"get otp"}</h1>
     <form onSubmit={handelsub} className='flex flex-col items-center justify-center p-5 gap-8'>
-        <p className='text-[0.7rem] text-red-300'>{erro && erro.response.message?erro.response.message:null}</p>
+        <p className='text-[0.7rem] text-red-300'>{erro && erro.response?.message?erro.response.message:null}</p>
         <p className='text-[0.7rem] text-red-300'>{navigator.onLine?(null):("OFFLINE")}</p>
         <input ref={inputref} className=' text-white bg-transparent border-x-2 border-blue-400 outline-none px-2 py-1 text-[0.9rem] w-[20rem]' type="text" placeholder={!otpstart?"+123":"otp"} spellCheck="false" autoFocus
         onChange={(e)=> setnumber(e.target.value)}

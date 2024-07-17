@@ -23,7 +23,7 @@ async createaccount({email, password, name}){
 }
 
 async login(email,password){
-   return await this.account.createEmailSession(email,password)
+   return await this.account.createEmailPasswordSession(email,password)
 }
 
 async getcurrentacc(){
@@ -45,7 +45,7 @@ async getlogo(name){
 }
 
 async createphone(number){
-    return await this.account.createPhoneSession(ID.unique(), number)
+    return await this.account.createPhoneToken(ID.unique(), number)
 } 
 
 async otpphone({phoneid,code}){
