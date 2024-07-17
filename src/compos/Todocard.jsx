@@ -12,7 +12,7 @@ const Todocard = ({ info, reference }) => {
   const disp = useDispatch()
 
   const gotodo = () => {
-    navig(`${info.colluserid}/todo/${info.$id}`)
+    navig(`/workspace/${info.colluserid}/${info.$id}`)
   }
 
   const deletetoso = async (id) => {
@@ -67,7 +67,7 @@ const Todocard = ({ info, reference }) => {
         <span onClick={() => deletetoso(info.$id)} className="material-symbols-outlined text-[1.1rem] text-neutral-400 hover:text-neutral-200  cursor-pointer">delete</span>
       </div>
 
-      <Link className="h-full w-full" to={`${info.colluserid}/todo/${info.$id}`}>
+      <Link className="h-full w-full" to={`/workspace/${info.colluserid}/${info.$id}`}>
         <p className="text-[0.7rem] text-justify">{decodetoplain(info.content, info.code)}</p>
       </Link>
 

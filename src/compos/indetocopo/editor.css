@@ -45,8 +45,9 @@ pre{
     width: 95%;
     color:white;
     padding: 0.5rem;
-    background-color: rgba(0, 0, 0, 0.477);
+    background-color: rgba(41, 41, 41, 0.477);
     font-size: 0.8rem;
+    border-radius: 0.5rem;
 }
 
 code{
