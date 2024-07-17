@@ -5,6 +5,8 @@ import Aiaettings from './Aiaettings'
 import Clientbase from '../../../appwrite/client'
 import { useSelector } from 'react-redux'
 import { decodetoplain } from '../../../hooks/usecodetoplain'
+import { usesimtohrml } from '../../../hooks/usesimtohrml'
+import ReactHtmlParser from 'html-react-parser';
 
 const Aicontent = ({ opener, setopener}) => {
     const [responsearr, setresponsearr] = useState([])
@@ -111,7 +113,7 @@ const Aicontent = ({ opener, setopener}) => {
                     <div key={nanoid()} className='flex items-end flex-col'>
                         <div className={`p-2 m-2 w-fit max-w-[90%] rounded-md  ${e.role == "model" && " group  relative"} ${e.role == "model" ? " bg-neutral-900" : "bg-blue-600"}`}>
                             {e.role == "model" && <button onClick={() => copyres(i)} className=' hidden  group-hover:block bg-black p-1 rounded-sm text-[0.9rem] absolute top-1 right-1 material-symbols-outlined'>content_copy</button>}
-                            <p className={` selection:text-white ${e.role == "model" ? " text-neutral-200" : "text-white"} whitespace-break-spaces`}>{e.parts[0].text}</p>
+                            <div className={` selection:text-white ${e.role == "model" ? " text-neutral-200" : "text-white"} whitespace-break-spaces`}>{ReactHtmlParser(usesimtohrml(e.parts[0].text))}</div>
                         </div>
                     </div>
                 ))}

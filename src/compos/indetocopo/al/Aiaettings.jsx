@@ -11,7 +11,6 @@ const Aiaettings = ({setopen, data }) => {
     const [apikey, setapikey] = useState("")
     const disp = useDispatch()
 
-
     const upload = async()=>{
         if (!apikey) return
         console.log("data",data);
@@ -44,12 +43,11 @@ const Aiaettings = ({setopen, data }) => {
                 </div>
                 <div className=' flex items-center gap-2 justify-center outline outline-1 outline-neutral-400 w-[55%] self-center rounded-md'>
                     <input maxLength={150} placeholder='add or update keys'  value={apikey} onChange={(e)=> setapikey(e.target.value)} className=' w-full placeholder:capitalize p-2 bg-transparent outline-none rounded-md text-[0.9rem]  h-full border-none' type="text" />
-                    <button onClick={upload} className=' h-full   capitalize font-medium  p-2 rounded text-[1rem]'>add</button>
+                    <button onClick={upload} className=' h-full capitalize font-medium  p-2 rounded text-[1rem]'>add</button>
                 </div>
                 <div className=' flex justify-center'>
                     <p className=' px-2 py-1 rounded-md bg-neutral-800'>{data.data? decodetoplain(data.data, data.code):"not provided any apikey"}</p>
                 </div>
-
             </div>
         </div>
     )
