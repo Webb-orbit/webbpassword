@@ -93,7 +93,7 @@ const Maintodo = () => {
           <button onClick={() => setedited(pre => !pre)} className='material-symbols-outlined'>edit</button>
           </div>
         </div>
-        <div className='mt-20  flex flex-col'>
+        <div className='mt-20  flex flex-col max-sm:mt-0'>
           <div className={`  justify-between h-12 items-center bg-neutral-900 py-2 px-2 ${edited ? "flex" : "hidden"}`}>
             <div className='flex gap-4 h-full'>
               {!splited && <button onClick={() => seteditorpreview(true)} className={`h-full px-4   capitalize font-medium ${editorpreview ? "bg-black" : "bg-neutral-700/70"}`}>editor</button>}
@@ -101,7 +101,7 @@ const Maintodo = () => {
             </div>
             <div className='flex gap-2'>
               <button onClick={() => setsplited(pre => !pre)} className=" material-symbols-outlined">{splited ? "splitscreen_left" : "fullscreen_portrait"}</button>
-              <button onClick={savetodo} className="material-symbols-outlined" >save</button>
+              <button onClick={savetodo} className="px-3 bg-green-500 rounded-sm font-medium" >save</button>
               <button onClick={cancleedit} className="material-symbols-outlined" >do_not_disturb_on</button>
             </div>
           </div>
@@ -112,7 +112,7 @@ const Maintodo = () => {
             </div>}
 
             <div className={`${edited ? splited ? "w-1/2 max-sm:w-[100%]" : editorpreview ? "hidden" : "w-full" : "w-[85%] max-sm:w-[100%]"}`}>
-              <div ref={textref} className={` text-[1.1rem]  whitespace-break-spaces ${edited && "w-[100%] h-[90vh] overflow-y-scroll editor p-2"}`}></div>
+              <div ref={textref} className={` text-[1.1rem]  whitespace-break-spaces ${edited && "w-[100%] h-[90vh] overflow-y-scroll editor p-2 "}`}></div>
             </div>
 
           </div>

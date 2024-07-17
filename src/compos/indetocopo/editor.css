@@ -1,55 +1,97 @@
-*{
-    appearance: none;   
+* {
+    appearance: none;
 }
-h1{
+
+.h1 {
     font-size: 35px;
     font-weight: 600;
     letter-spacing: 2px;
 }
-h2{
+
+.h2 {
     font-size: 30px;
+    font-weight: 600;
 }
-h3{
+
+.h3 {
     font-size: 20px;
+    font-weight: 600;
 }
 
-.a{
-color: rgb(204, 255, 238);
+.a {
+    color: rgb(204, 255, 238);
+    text-wrap:wrap;
 }
 
-ul li{
-    list-style-type:square;
+ul li {
+    list-style-type: square;
     margin-left: 2rem;
+    line-height: 2rem;
 }
 
-ol li{
+ol li {
     margin-left: 2rem;
-    list-style-type:decimal;
+    list-style-type: decimal;
 }
 
-hr{
+hr {
     margin: 1rem 0;
-     border-top-width: 1px;
-     border-top-color: rgb(230, 254, 255);
+    border-top-width: 1px;
+    border-top-color: rgb(230, 254, 255);
 }
 
-blockquote{
+.blok {
     padding-left: 1rem;
     margin-left: 1rem;
     border-left: 4px solid white;
-    height:fit-content;
+    height: fit-content;
 }
 
-pre{
-    margin:0.5rem  auto;
+.pre {
+    margin: 0.5rem auto;
     width: 95%;
-    color:white;
+    color: white;
     padding: 0.5rem;
     background-color: rgba(41, 41, 41, 0.477);
     font-size: 0.8rem;
     border-radius: 0.5rem;
+    display: block;
+    
+}
+.inline {
+    width: 95%;
+    color: white;
+    padding: 0.3rem 0.5rem ;
+    background-color: rgba(41, 41, 41, 0.477);
+    font-size: 0.8rem;
+    border-radius: 0.3rem;
+    display:inline;
 }
 
-code{
-    display: block;
-}
+@media not all and (min-width: 640px) {
+    .h1 {
+        font-size: 21px;
+        color: whitesmoke;
+    }
+    
+    .h2 {
+        font-size: 19px;
+    }
+    
+    .h3 {
+        font-size: 15px;
+    }
+
+    ul li, ol li  {
+        margin-left: 1rem;
+    }
+
+    .blok {
+        padding-left: 0.5rem;
+        margin-left: 0.5rem;
+        border-left: 3px solid white;
+        height: fit-content;
+        font-size: 16px;
+    }
+    
+  }
