@@ -71,9 +71,9 @@ const Aicontent = ({ opener, setopener}) => {
             console.log("userdate", userdata);
             const haveapi = (await Clientbase.getclientbyuserid(userdata)).documents[0]
             console.log("haveapi", haveapi);
-            if (haveapi.geminiapi !== null) {
+            if (haveapi.data !== null) {
                 console.log("insite");
-                const decode = decodetoplain(haveapi.geminiapi, haveapi.code)
+                const decode = decodetoplain(haveapi.data, haveapi.code)
                 if(decode){
                     setgeminikey(decode)
                 }

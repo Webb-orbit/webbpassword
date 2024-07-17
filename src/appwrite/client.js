@@ -17,7 +17,7 @@ class clientclass{
     }
 
     async updateclient(id,{data, code}){
-        return await this.user.updateDocument(config.databaseid, config.clientid, id, {geminiapi:data, code:code})
+        return await this.user.updateDocument(config.databaseid, config.clientid, id, {data:data, code:code})
     }
 
     async deleteuser(id){

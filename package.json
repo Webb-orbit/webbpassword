@@ -14,7 +14,7 @@
     "@reduxjs/toolkit": "^2.2.1",
     "@vercel/analytics": "^1.2.2",
     "@vercel/speed-insights": "^1.0.10",
-    "appwrite": "^14.0.1",
+    "appwrite": "^15.0.0",
     "boxicons": "^2.1.4",
     "framer-motion": "^11.0.8",
     "html-react-parser": "^5.1.10",
