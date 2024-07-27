@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Dataserv from '../../appwrite/Data'
 import { useDispatch } from 'react-redux'
@@ -44,14 +44,6 @@ const Boat = ({ tododata }) => {
         }
     }
 
-    const gospeech = () => {
-        try {
-            nevi(`/${tododata.colluserid}/speech/${tododata.$id}`)
-        } catch (error) {
-            disp(showtost({ "display": true, "mass": "an error accourd", icon: 'error', bg: "bg-red-400", time: '1500' }))
-        }
-    }
-
     const goshare = () => {
         try {
             disp(changeshare(true))
@@ -81,9 +73,6 @@ const Boat = ({ tododata }) => {
                     <button onClick={goshare} className=' hover:bg-neutral-800 rounded-md px-2 py-1 flex items-center gap-5'><span className='text-[1.2rem] material-symbols-outlined text-neutral-300'>share</span>
                         <span className=' capitalize font-semibold'>share</span></button>
 
-                    <button onClick={gospeech} className=' hover:bg-neutral-800 rounded-md px-2 py-1 flex items-center gap-5'><span className='text-[1.2rem] material-symbols-outlined text-neutral-300'>text_to_speech</span>
-                        <span className=' capitalize font-semibold'>listen</span></button>
-
                     <button onClick={deletetodo} className=' hover:bg-neutral-800 rounded-md px-2 py-1 flex items-center gap-5'><span className='text-[1.2rem] material-symbols-outlined text-red-400'>delete</span>
                         <span className=' capitalize font-semibold text-red-400'>delete</span></button>
 
@@ -98,16 +87,17 @@ const Boat = ({ tododata }) => {
                         <button onClick={closemark} className="material-symbols-outlined">close</button>
                     </div>
                     <pre className=' font-semibold bg-transparent text-[1rem]'>
-                        <p>H1 heading == # text</p>
-                        <p>H2 heading == ## text</p>
-                        <p>H3 heading == ### text</p>
-                        <p>Bulleted list == ** text</p>
-                        <p>Numbered list == ^ text</p>
-                        <p>Bold == *text*</p>
-                        <p>Code block == ``` code ```</p>
-                        <p>Blockquote == &gt; text</p>
-                        <p>link == [URL](NAME)</p>
-                        <p>Text divider == ---</p>
+                        <p>H1 heading = # text</p>
+                        <p>H2 heading = ## text</p>
+                        <p>H3 heading = ### text</p>
+                        <p>Bulleted list = * text</p>
+                        <p>Numbered list = ^ text</p>
+                        <p>Bold = **text**</p>
+                        <p>Code block = ``` code ```</p>
+                        <p>inline Code block = ` code `</p>
+                        <p>Blockquote = &gt; text</p>
+                        <p>insert link = [URL](NAME)</p>
+                        <p>Text divider = ---</p>
                     </pre>
                 </div>
         </>
