@@ -52,8 +52,8 @@ const Boat = ({ tododata }) => {
         }
     }
 
-    const closemark = ()=>{
-        setmenubar(false) 
+    const closemark = () => {
+        setmenubar(false)
         setmarkopener(false)
     }
 
@@ -79,27 +79,27 @@ const Boat = ({ tododata }) => {
                 </div>
             </div>
 
-             <Aicontent opener={alopener} setopener={setalopener} />
+            <Aicontent opener={alopener} setopener={setalopener} />
 
             <div className={` bottom-16 p-3 bg-neutral-950 outline outline-1 outline-neutral-400 right-10 w-[40%] h-[50vh] rounded-md overflow-y-scroll editor ${markopener ? "fixed" : "hidden"} max-sm:right-2 max-sm:w-[90%]`}>
-                    <div className='flex justify-between items-start p-2'>
-                        <p className=' w-[90%] font-medium capitalize poppins'>markdown syntex</p>
-                        <button onClick={closemark} className="material-symbols-outlined">close</button>
-                    </div>
-                    <pre className=' font-semibold bg-transparent text-[1rem]'>
-                        <p>H1 heading = # text</p>
-                        <p>H2 heading = ## text</p>
-                        <p>H3 heading = ### text</p>
-                        <p>Bulleted list = * text</p>
-                        <p>Numbered list = ^ text</p>
-                        <p>Bold = **text**</p>
-                        <p>Code block = ``` code ```</p>
-                        <p>inline Code block = ` code `</p>
-                        <p>Blockquote = &gt; text</p>
-                        <p>insert link = [URL](NAME)</p>
-                        <p>Text divider = ---</p>
-                    </pre>
+                <div className='flex justify-between items-start p-2'>
+                    <p className=' w-[90%] font-medium capitalize poppins'>markdown syntex</p>
+                    <button onClick={closemark} className="material-symbols-outlined">close</button>
                 </div>
+                <pre className=' font-semibold bg-transparent text-[1rem]'>
+                    <p>H1 heading = # text</p>
+                    <p>H2 heading = ## text</p>
+                    <p>H3 heading = ### text</p>
+                    <p>Bulleted list = * text</p>
+                    <p>Numbered list = ^ text</p>
+                    <p>Bold = **text**</p>
+                    <p>Code block = ``` code ```</p>
+                    <p>inline Code block = ` code `</p>
+                    <p>Blockquote = &gt; text</p>
+                    <p>insert link = [URL](NAME)</p>
+                    <p>Text divider = ---</p>
+                </pre>
+            </div>
         </>
     )
 }

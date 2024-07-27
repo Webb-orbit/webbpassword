@@ -48,6 +48,7 @@ const Aiaettings = ({setopen, data }) => {
                 <div className=' flex justify-center'>
                     <p className=' px-2 py-1 rounded-md bg-neutral-800'>{data.data? decodetoplain(data.data, data.code):"not provided any apikey"}</p>
                 </div>
+                
             </div>
         </div>
     )
