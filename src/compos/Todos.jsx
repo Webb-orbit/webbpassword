@@ -38,7 +38,7 @@ const Todos = () => {
       let data = await Dataserv.createtodo({ 'title': formtitle, 'content': "", "colluserid": selet.userdata })
       setformtitle("")
       if (data) {
-        navia(`${selet.userdata}/todo/${data.$id}`)
+        navia(`/workspace/${selet.userdata}/${data.$id}`)
       }
     } catch (error) {
       disp(showtost({"display":true, "mass":"an error occurred", icon:'error', bg:"bg-red-400", time:'1500'}))
@@ -99,7 +99,6 @@ const Todos = () => {
 
             <div className="  text-white text-[2rem] flex items-center justify-center ">
               <button className="max-sm:hidden flex items-center justify-center" onClick={arrangefun}><span className=" text-[1.1rem] p-2 rounded-full hover:bg-white hover:text-black material-symbols-outlined max-sm:active:bg-neutral-400 max-sm:bg-white max-sm:text-black">grid_view</span></button>
-              <button className="flex items-center justify-center" onClick={()=> navia("/blank")}><span className=" text-[1.1rem] p-2 rounded-full hover:bg-white hover:text-black material-symbols-outlined max-sm:active:bg-neutral-400 max-sm:bg-white max-sm:text-black">speech_to_text</span></button>
             </div>
 
           </div>

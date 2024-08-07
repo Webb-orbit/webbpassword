@@ -15,11 +15,9 @@ import Trying from './compos/Trying.jsx'
 import Profile from './compos/Profile.jsx'
 import Phonelogin from './compos/Phonelogin.jsx'
 import Varify from './compos/Varify.jsx'
-import Inditodo2 from './compos/Inditodo2.jsx'
 import Profilepage from './pages/Profilepage.jsx'
 import Profpassword from './compos/Profpassword.jsx'
 import Dangerzone from './compos/Dangerzone.jsx'
-import Inditodopage from './pages/Inditodopage.jsx'
 import Allshare from './compos/Allshare.jsx'
 import Profshares from './compos/Profshares.jsx'
 import Profabout from './compos/Profabout.jsx'
@@ -35,12 +33,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path='/' element={<App />}>
           <Route index path='/' element={<Home />} />
           <Route path='/pdf/:pdfid' element={<Authlayout authencation={true} child={<Pdfpriview />} />} />
-
-          <Route path='/:userid/todo/:slug' element={<Authlayout authencation={true} child={<Inditodopage />} />}>
-            <Route path='/:userid/todo/:slug' element={<Inditodo2 />} />
-          </Route>
           <Route path='/workspace/:userid/:slug' element={<Newinditodo />} />
-          <Route path='/newtodo' element={<Newinditodo />} />
 
           <Route path='/account' element={<Authlayout authencation={true} child={<Profilepage />} />} >
             <Route path='/account' index element={<Authlayout authencation={true} child={<Profile />} />} />

@@ -197,7 +197,7 @@ const Profshares = () => {
               <div className="w-[20%] relative max-sm:w-[10%] max-sm:self-start">
 
                 <div className=" flex justify-end w-full h-full items-center">
-                  <button onClick={()=> navy(`/${e.user}/todo/${JSON.parse(e.sharedtodo).$id}`)} className=" hover:text-white text-neutral-300 max-sm:hidden">
+                  <button onClick={()=> navy(`/workspace/${e.user}/${JSON.parse(e.sharedtodo).$id}`)} className=" hover:text-white text-neutral-300 max-sm:hidden">
                     <span className=" text-[1.3rem] material-symbols-outlined">edit_square</span>
                   </button>
                   <button className=" hover:text-white text-neutral-300" onClick={() => displayerfun(e.$id)}>
@@ -213,7 +213,7 @@ const Profshares = () => {
   <p className=" w-[80%] text-nowrap overflow-x-hidden font-semibold capitalize">{JSON.parse(e.sharedtodo).title}</p>
   <button onClick={()=>setdisplayer(Date.now().toString())}><span className=" text-[1.3rem] material-symbols-outlined">cancel</span></button>
 </div>
-                      <button onClick={() => navy(`/${e.user}/todo/${JSON.parse(e.sharedtodo).$id}`)} className=" hidden max-sm:block  hover:text-neutral-300 max-sm:py-2 ">
+                      <button onClick={() => navy(`/workspace${e.user}/${JSON.parse(e.sharedtodo).$id}`)} className=" hidden max-sm:block  hover:text-neutral-300 max-sm:py-2 ">
                         <div className='flex justify-between items-center'>
                           <p className=" capitalize font-semibold text-[0.8em]">edit</p>
                           <span className=" material-symbols-outlined text-[1.2rem]">edit_square</span>
