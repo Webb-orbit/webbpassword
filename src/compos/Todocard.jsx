@@ -5,15 +5,9 @@ import { useDispatch } from "react-redux"
 import { showtost, updatelistto } from "../store/Storeslice"
 import { decodetoplain } from "../hooks/usecodetoplain"
 
-
-
 const Todocard = ({ info, reference }) => {
   const navig = useNavigate()
   const disp = useDispatch()
-
-  const gotodo = () => {
-    navig(`/workspace/${info.colluserid}/${info.$id}`)
-  }
 
   const deletetoso = async (id) => {
     try {
@@ -22,25 +16,25 @@ const Todocard = ({ info, reference }) => {
         let ishared = await Dataserv.shbylikedouserid(info.colluserid, id)
         let sharedoc = ishared.documents[0]
         if (ishared.total > 0) {
-        console.log(ishared);
+          console.log(ishared);
+          let dele = await Dataserv.deletetodo(id)
+          let deleteshare = await Dataserv.deleteshare(sharedoc.$id)
+          if (dele && deleteshare) {
+            disp(updatelistto())
+            disp(showtost({ "display": true, "mass": "share link and target both deleted", icon: 'delete', bg: "bg-red-400", time: '1500' }))
+          }
+        }
+      } else {
         let dele = await Dataserv.deletetodo(id)
-        let deleteshare  = await Dataserv.deleteshare(sharedoc.$id)
-        if (dele && deleteshare) {
+        if (dele) {
           disp(updatelistto())
-          disp(showtost({ "display": true, "mass": "share link and target both deleted", icon: 'delete', bg: "bg-red-400", time: '1500' }))
+          disp(showtost({ "display": true, "mass": "deleted", icon: 'delete', bg: "bg-red-400", time: '1500' }))
         }
       }
-    } else {
-      let dele = await Dataserv.deletetodo(id)
-      if (dele) {
-        disp(updatelistto())
-        disp(showtost({ "display": true, "mass": "deleted", icon: 'delete', bg: "bg-red-400", time: '1500' }))
-      }
+    } catch (error) {
+      console.log(error);
+      disp(showtost({ "display": true, "mass": "fail to delete", icon: 'delete', bg: "bg-red-400", time: '1500' }))
     }
-  } catch (error) {
-    console.log(error);
-    disp(showtost({ "display": true, "mass": "fail to delete", icon: 'delete', bg: "bg-red-400", time: '1500' }))
-  }
   }
 
   const scrw = window.outerWidth
@@ -54,7 +48,7 @@ const Todocard = ({ info, reference }) => {
       <div className="flex justify-between py-2">
         <h3 className=" w-[80%] overflow-hidden font-semibold poppins-regular text-neutral-200 whitespace-nowrap capitalize text-[1rem]">{info?.title}</h3>
         <div className="flex items-center">
-          <span onClick={gotodo} className="material-symbols-outlined text-[1.1rem] text-neutral-400 hover:text-neutral-200  cursor-pointer">open_jam</span>
+          <span onClick={()=>navig(`/workspace/${info.colluserid}/${info.$id}`)} className="material-symbols-outlined text-[1.1rem] text-neutral-400 hover:text-neutral-200  cursor-pointer">open_jam</span>
           <span onClick={() => deletetoso(info.$id)} className="material-symbols-outlined text-[1.1rem] text-neutral-400 hover:text-neutral-200  cursor-pointer">delete</span>
         </div>
       </div>
@@ -70,7 +64,6 @@ const Todocard = ({ info, reference }) => {
       <Link className="h-full w-full" to={`/workspace/${info.colluserid}/${info.$id}`}>
         <p className="text-[0.7rem] text-justify">{decodetoplain(info.content, info.code)}</p>
       </Link>
-
     </div>
   )
 }

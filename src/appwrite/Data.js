@@ -43,26 +43,6 @@ async gettodo(docid){
     return await this.database.getDocument(config.databaseid, config.collectionid, docid)
 }
 
-// ultratag
-
-async createultratag({ultraname, ulteruserid, ultratagfileid}){
-    return await this.database.createDocument(config.databaseid, config.ultracollid, ultratagfileid, {ultraname, ulteruserid, ultratagfileid})
-}
-
-async allultratags(quries){
-    return await this.database.listDocuments(config.databaseid, config.ultracollid, [Query.equal('ulteruserid', [quries])])
-}
-
-async deleteaultra(docid){
-   return await this.database.deleteDocument(config.databaseid, config.ultracollid, docid)
-
-   }
-
-   async getultra(docid){
-    return await this.database.getDocument(config.databaseid, config.ultracollid, docid)
-}
-
-
 // sharedtodo
 
 async createshare({sharedtodo, privated, user, views, autoupdate,linkedtodoid,creatorinfo}){

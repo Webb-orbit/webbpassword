@@ -10,7 +10,6 @@ import Authlayout from './compos/Authlayout.jsx'
 import Logincompo from './compos/Logincompo.jsx'
 import App from './App.jsx'
 import Home from './pages/Home.jsx'
-import Pdfpriview from './compos/Pdfpriview.jsx';
 import Trying from './compos/Trying.jsx'
 import Profile from './compos/Profile.jsx'
 import Phonelogin from './compos/Phonelogin.jsx'
@@ -32,7 +31,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Routes>
         <Route path='/' element={<App />}>
           <Route index path='/' element={<Home />} />
-          <Route path='/pdf/:pdfid' element={<Authlayout authencation={true} child={<Pdfpriview />} />} />
           <Route path='/workspace/:userid/:slug' element={<Newinditodo />} />
 
           <Route path='/account' element={<Authlayout authencation={true} child={<Profilepage />} />} >
