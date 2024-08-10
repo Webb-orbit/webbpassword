@@ -3,6 +3,8 @@ import Auth from '../appwrite/Auth'
 import { useDispatch } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import { storelogin } from '../store/Storeslice'
+import googlelogo from "../assets/unnamed.png"
+import githublogo from "../assets/github.png"
 
 const Logincompo = () => {
   const [email, setemail] = useState("")
@@ -47,8 +49,8 @@ const Logincompo = () => {
 
     <div className='flex flex-row-reverse items-center justify-around w-full h-[60vh] max-sm:flex-col'>
     <div className='w-[30%] flex flex-col items-center justify-center gap-4 max-sm:w-[90%]'>
-    <button onClick={oauthfungoogle} className=' rounded-md w-[80%] bg-blue-500 py-3 font-semibold capitalize'>login with google</button>
-    <button onClick={oauthfungithub} className=' rounded-md w-[80%] bg-blue-500 py-3 font-semibold capitalize'>login with github</button>
+    <button onClick={oauthfungoogle} className=' rounded-md w-[80%] bg-neutral-800/90 py-3 font-semibold capitalize flex items-center justify-center gap-2'><img className='w-[1.4rem]' src={googlelogo} />login with google</button>
+    <button onClick={oauthfungithub} className=' rounded-md w-[80%] bg-neutral-800/90 py-3 font-semibold capitalize flex items-center justify-center gap-2'><img className='w-[1.4rem]' src={githublogo} />login with github</button>
         </div>
     <form onSubmit={handelsub} className='w-[50%] flex flex-col items-center justify-center p-5 gap-8'>
         <input className=' text-white bg-transparent border-x-2 border-blue-400 outline-none px-2 py-1 text-[0.9rem] w-[20rem]' type="text" placeholder='email' spellCheck="false"
@@ -57,7 +59,7 @@ const Logincompo = () => {
         <input className='text-white bg-transparent border-x-2 border-blue-400 outline-none px-2 py-1 text-[0.9rem] w-[20rem]' type="text" placeholder='password' spellCheck="false" 
         onChange={(e)=> setpassword(e.target.value)}
         value={password}/>
-        <button type='submit' className=' bg-blue-500 text-white px-10 py-1 outline-none rounded'>login</button>
+        <button type='submit' className=' bg-neutral-700 text-white px-10 py-1 outline-none rounded'>login</button>
     </form>
     </div>
     <p>log in with <Link  className='text-blue-300' to={"/phonelogin"}>phone</Link></p>

@@ -3,6 +3,8 @@ import Auth from '../appwrite/Auth'
 import { useDispatch } from 'react-redux'
 import { storelogin } from '../store/Storeslice'
 import { useNavigate, Link } from 'react-router-dom'
+import googlelogo from "../assets/unnamed.png"
+import githublogo from "../assets/github.png"
 
 const Signupcompo = () => {
     const [email, setemail] = useState("")
@@ -48,8 +50,8 @@ const Signupcompo = () => {
     <div className='flex flex-row-reverse justify-around items-center w-full h-[60vh] max-sm:flex-col'>
 
         <div className='w-[30%] flex flex-col items-center justify-center gap-4 max-sm:w-[90%]'>
-    <button onClick={oauthfungoogle} className=' rounded-md w-[80%] bg-blue-500 py-3 font-semibold capitalize'>login with google</button>
-    <button onClick={oauthfungithub} className=' rounded-md w-[80%] bg-blue-500 py-3 font-semibold capitalize'>login with github</button>
+    <button onClick={oauthfungoogle} className='  rounded-md w-[80%] bg-neutral-800/90 py-3 font-semibold capitalize flex items-center justify-center gap-2'><img className='w-[1.4rem]' src={googlelogo} />login with google</button>
+    <button onClick={oauthfungithub} className='  rounded-md w-[80%] bg-neutral-800/90 py-3 font-semibold capitalize flex items-center justify-center gap-2'><img className='w-[1.4rem]' src={githublogo} />login with github</button>
         </div>
             
     <form onSubmit={handelsub} className=' w-[50%] flex flex-col items-center justify-center p-5 gap-8'>
@@ -63,7 +65,7 @@ const Signupcompo = () => {
         <input className=' text-white bg-transparent border-x-2 border-blue-400 outline-none px-2 py-1 text-[0.9rem] w-[20rem]' type="text" maxLength={40} placeholder='name' spellCheck="false" 
         onChange={(e)=> setname(e.target.value)}
         value={name}/>
-        <button type='submit' className=' bg-blue-500 text-white px-10 py-1 outline-none rounded'>signup</button>
+        <button type='submit' className=' bg-neutral-700 text-white px-10 py-1 outline-none rounded'>signup</button>
     </form>
         </div>
     <p>create account useing <Link className='text-blue-300' to={"/phonelogin"}>phone</Link></p>
