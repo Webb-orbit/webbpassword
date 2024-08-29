@@ -35,8 +35,8 @@ async alltodos(quries){
     return await this.database.listDocuments(config.databaseid, config.collectionid, [Query.equal('colluserid', [quries])])
 }
 
-async alltodosbyshared(shared, value){
-    return await this.database.listDocuments(config.databaseid, config.collectionid, [Query.equal("shared", [shared]), Query.equal('colluserid', [value])])
+async alltodosbyshared(value){
+    return await this.database.listDocuments(config.databaseid, config.collectionid, [Query.equal("shared", false), Query.equal('colluserid', value)])
 }
 
 async gettodo(docid){

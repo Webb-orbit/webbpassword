@@ -1,4 +1,4 @@
-
+import { highlightcode } from "./highlightcode";
 
 export const usesimtohrml = (markdown) => {
     function escapee(str) {
@@ -15,7 +15,7 @@ export const usesimtohrml = (markdown) => {
             .replace(/'/g, '&#039;');
     }
     let html = markdown
-        .replace(/```([\s\S]*?)```/gim, (_, p1) => `<pre class='pre'><code>${escapee(p1)}</code></pre>`)
+    .replace(/```([\s\S]*?)```/gim, (_, p1) => `<pre class='pre'><code>${escapee(p1)}</code></pre>`)
         .replace(/`([\s\S]*?)`/gim, (_, p1) => `<pre class='inline'><code>${escapee(p1)}</code></pre>`)
         .replace(/\[(.*?)\]\((.*?)\)/gim, "<a class='a' target='_blank' href='$1'>$2</a>")
         .replace(/^# (.*$)/gim, "<h1 class='h1'>$1</h1>")

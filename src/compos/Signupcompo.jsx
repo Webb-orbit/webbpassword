@@ -35,8 +35,8 @@ const Signupcompo = () => {
         await Auth.oauthgoogle()
       }
     
-      const oauthfungithub = ()=>{
-         Auth.oauthgithub()
+      const oauthfungithub = async()=>{
+        await Auth.oauthgithub()
       }
     
 

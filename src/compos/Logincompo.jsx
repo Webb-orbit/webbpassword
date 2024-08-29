@@ -36,8 +36,8 @@ const Logincompo = () => {
     await Auth.oauthgoogle()
   }
 
-  const oauthfungithub = ()=>{
-     Auth.oauthgithub()
+  const oauthfungithub = async()=>{
+     await Auth.oauthgithub()
   }
 
   return (

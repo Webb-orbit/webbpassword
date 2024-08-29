@@ -36,9 +36,11 @@ const Profshares = () => {
 
   const uncreatedtodos = async () => {
     if (createlist == false) {
+      const alltodos = await Dataserv.alltodosbyshared(accuserdata?.$id)
+      console.log(alltodos);
+      
       setunshred(null)
       setcreatelist(!createlist)
-      const alltodos = await Dataserv.alltodosbyshared(false, accuserdata.$id)
       if (alltodos) {
         setunshred(alltodos.documents)
       }
