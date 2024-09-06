@@ -5,19 +5,11 @@ function Profnavbar() {
   const navbar = [
     {
       name:"overview",
-      slug:"/account"
+      slug:"/account/info"
     },
     {
       name:"shares",
       slug:"/account/allshares"
-    },
-    {
-      name:"password",
-      slug:"/account/password"
-    },
-    {
-      name:"Pricing",
-      slug:"/"
     },
     {
       name:"About us",

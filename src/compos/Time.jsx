@@ -12,7 +12,7 @@ const [color, setcolor] = useState(true)
 
   return (
     <>
-    <div className=' w-full flex items-center justify-end'>
+    <div className=' absolute top-2 right-2 w-fit'>
     <time onClick={()=>setcolor(!color)} className={` max-sm:text-[1rem] select-none poppins-regular  uppercase font-[600] text-[2rem] p-2 ${color?"text-neutral-300":"text-neutral-400"}`}
     >{tomeis}</time>
     </div>

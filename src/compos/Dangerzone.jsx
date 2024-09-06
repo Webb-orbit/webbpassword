@@ -5,7 +5,6 @@ import {useDispatch } from 'react-redux'
 import { showtost, storelogout } from '../store/Storeslice'
 import { useNavigate } from 'react-router-dom'
 import Dataserv from '../appwrite/Data'
-import Bucket from '../appwrite/Storage'
 import Clientbase from '../appwrite/client'
 
 const Dangerzone = () => {
@@ -37,15 +36,6 @@ const Dangerzone = () => {
       disp(showtost({ "display": true, "mass": "All shares are deleted", icon: 'error', bg: "bg-white-500", time: '500' }));
       return true
     }
-    
-    async function deleteUltras(ultrasdoc) {
-      await Promise.all(ultrasdoc.map(async (e) => {
-        await Bucket.deletfile(e.ultratagfileid);
-        await Dataserv.deleteaultra(e.$id);
-      }));
-      disp(showtost({ "display": true, "mass": "All files are deleted", icon: 'error', bg: "bg-white-500", time: '500' }));
-      return true
-    }
 
     const logouts = async()=>{
       try {
@@ -68,15 +58,13 @@ const Dangerzone = () => {
             setload(true)
             let todos = (await Dataserv.alltodos(emailphone.$id)).documents
             let shares = (await Dataserv.sharesbyid(emailphone.$id)).documents
-            let ultras = (await Dataserv.allultratags(emailphone.$id)).documents
             let users = (await Clientbase.getclientbyuserid(emailphone.$id)).documents
 
             let aa = await deleteTodos(todos);
             let bb = await deleteShares(shares);
-            let cc = await deleteUltras(ultras);
             let dd = await Clientbase.deleteuser(users);
 
-            if (aa && bb && cc && dd) {
+            if (aa && bb && dd) {
               console.log("done");
               logouts()
             }

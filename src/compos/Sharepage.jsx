@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'

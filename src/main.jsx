@@ -15,7 +15,6 @@ import Profile from './compos/Profile.jsx'
 import Phonelogin from './compos/Phonelogin.jsx'
 import Varify from './compos/Varify.jsx'
 import Profilepage from './pages/Profilepage.jsx'
-import Profpassword from './compos/Profpassword.jsx'
 import Dangerzone from './compos/Dangerzone.jsx'
 import Allshare from './compos/Allshare.jsx'
 import Profshares from './compos/Profshares.jsx'
@@ -34,8 +33,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path='/workspace/:userid/:slug' element={<Newinditodo />} />
 
           <Route path='/account' element={<Authlayout authencation={true} child={<Profilepage />} />} >
-            <Route path='/account' index element={<Authlayout authencation={true} child={<Profile />} />} />
-            <Route path='/account/password' element={<Authlayout authencation={true} child={<Profpassword />} />} />
+            <Route path='/account/info' index element={<Authlayout authencation={true} child={<Profile />} />} />
             <Route path='/account/Dangerzone' element={<Authlayout authencation={true} child={<Dangerzone />} />} />
             <Route path='/account/about-us' element={<Authlayout authencation={true} child={<Profabout />} />} />
             <Route path='/account/allshares' element={<Authlayout authencation={true} child={<Profshares />} />} />

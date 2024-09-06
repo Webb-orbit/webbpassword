@@ -41,6 +41,10 @@ html::-webkit-scrollbar-thumb{
     font-family: "Poppins", sans-serif;
     font-style: normal;
   }
+  .itim {
+    font-family: "Itim", cursive;
+  }
+  
 
   body{
     background-color: rgb(5, 5, 5);
