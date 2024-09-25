@@ -84,8 +84,7 @@ const Todos = () => {
         <div className=" select-none h-[20vh]  w-full flex flex-col items-center justify-center">
           <h2 className=" uppercase text-white font-semibold text-[3rem] max-sm:text-[2rem]">target</h2>
 
-          <div className="flex items-center justify-between px-[5%] w-full ">
-            <div>
+          <div className={`flex items-center px-[5%] w-full ${arrtodos.length>0? " justify-between":"justify-center"}`}>
               <form ref={todoinputref} onSubmit={managesubmites} className=" flex items-center justify-between  border-2  border-white rounded-sm">
                 <input className="w-[20rem] outline-none py-1 px-3 text-[0.9rem] border-0 bg-transparent backdrop-blur-sm text-white max-sm:w-[60vw] " spellCheck="false" type="text"
                   placeholder="set targets"
@@ -95,11 +94,10 @@ const Todos = () => {
                 />
                 <button className="py-1 px-3 text-[0.9rem] uppercase outline-none text-white backdrop-blur-sm border-none hover:text-blue-200 " type="submit">add</button>
               </form>
-            </div>
 
-            <div className="  text-white text-[2rem] flex items-center justify-center ">
+            {arrtodos.length>0 && <div className="  text-white text-[2rem] flex items-center justify-center ">
               <button className="max-sm:hidden flex items-center justify-center" onClick={arrangefun}><span className=" text-[1.1rem] p-2 rounded-full hover:bg-white hover:text-black material-symbols-outlined max-sm:active:bg-neutral-400 max-sm:bg-white max-sm:text-black">grid_view</span></button>
-            </div>
+            </div>}
 
           </div>
 
