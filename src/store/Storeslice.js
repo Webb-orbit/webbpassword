@@ -15,9 +15,6 @@ const init = {
     phoneid:{
         ids:""
     },
-    password:{
-        visual:false
-    },
     updatetodolist:{
         runer:false
     },
@@ -58,10 +55,6 @@ export const Ultraslice = createSlice({
         },
         delettost(state){
             state.tost.display = false
-        },
-
-        setvisualtartus(state, action){
-            state.password.visual = action.payload
         },
 
         updatelistto(state){

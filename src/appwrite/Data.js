@@ -71,8 +71,6 @@ async getshare(id){
 
 }
 
-
-
 const Dataserv = new dataservices()
 
 export default Dataserv
