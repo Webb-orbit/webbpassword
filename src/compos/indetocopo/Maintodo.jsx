@@ -112,7 +112,7 @@ const Maintodo = () => {
             </div>}
 
             <div className={`${edited ? splited ? "w-1/2 max-sm:w-[100%]" : editorpreview ? "hidden" : "w-full" : "w-[85%] max-sm:w-[100%]"}`}>
-              <div ref={textref} className={` text-[1.1rem]  whitespace-break-spaces ${edited && "w-[100%] h-[90vh] overflow-y-scroll editor p-2 "}`}></div>
+              <div ref={textref} className={` text-[1.1rem] max-sm:text-[0.9rem] text-neutral-200 whitespace-break-spaces ${edited && "w-[100%] h-[90vh] overflow-y-scroll editor p-2 "}`}></div>
             </div>
 
           </div>
